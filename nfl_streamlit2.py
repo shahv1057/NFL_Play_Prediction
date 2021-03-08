@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 import numpy as np
-import pickle
+import pickle5 as pickle
 import urllib
 from imblearn                     import FunctionSampler
 from imblearn.pipeline            import Pipeline as imbPipeline
