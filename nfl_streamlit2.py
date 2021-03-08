@@ -70,7 +70,9 @@ def filter_data(X):
             return np.nan
     Xdf_c['yrdln'] = Xdf_c.apply(lambda x: convert_yd_line_vars(x['posteam'], x['yrdln']), axis=1)
     return Xdf_c
-categorical_columns = pd.read_pickle("dtypes.pkl")
+with open('dtypes.pkl', 'rb') as f:
+    categorical_columns = pickle.load(f))
+#categorical_columns = pd.read_pickle("dtypes.pkl")
 con_pipe = Pipeline([('imputer', SimpleImputer(strategy='median', add_indicator=True))
                     ])
 cat_pipe = Pipeline([('imputer', SimpleImputer(strategy='most_frequent', add_indicator=True)),
